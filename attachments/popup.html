@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Répète-Actions</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span id="recDot" class="rec-dot"></span>
+      <h1>Répète-Actions</h1>
+    </div>
+    <p class="tagline">Enregistre. Répète. À ta vitesse.</p>
+  </header>
+
+  <section class="card">
+    <button id="toggleRecordBtn" class="btn btn-record">● Démarrer l'enregistrement</button>
+    <p id="recordStatus" class="muted small"></p>
+  </section>
+
+  <section class="card">
+    <h2>Assistant anti-pop-up</h2>
+    <label class="toggle-row">
+      <input type="checkbox" id="autoDismissToggle" />
+      <span>Fermer automatiquement les bannières et fenêtres qui bloquent la page</span>
+    </label>
+    <p class="muted small">
+      Détecte les motifs habituels (cookies, fenêtres « Fermer/Non merci », etc.) sur toutes
+      les pages, en continu. Ne déclenche ni ne regarde de publicités.
+    </p>
+  </section>
+
+  <div id="draftsContainer"></div>
+
+  <template id="draftTemplate">
+    <section class="card draft-card">
+      <h2>Nouvelle macro</h2>
+      <input class="draft-name" type="text" placeholder="Nom de la macro (ex. Connexion au site)" />
+
+      <div class="draft-strip tape-strip"></div>
+      <p class="muted small">Clique sur une étape pour ajuster son délai (en ms) avant qu'elle se joue.</p>
+
+      <div class="row">
+        <button class="btn btn-primary save-draft-btn">Enregistrer la macro</button>
+        <button class="btn btn-ghost discard-draft-btn">Annuler</button>
+      </div>
+    </section>
+  </template>
+
+  <section class="card">
+    <div class="section-title-row">
+      <h2>Mes macros</h2>
+      <label class="btn btn-ghost small-btn" for="importInput">Importer</label>
+      <input id="importInput" type="file" accept="application/json" class="hidden" />
+    </div>
+    <ul id="macroList" class="macro-list"></ul>
+    <p id="emptyState" class="muted small hidden">Aucune macro pour l'instant — enregistre ta première action ci-dessus.</p>
+  </section>
+
+  <template id="macroItemTemplate">
+    <li class="macro-item">
+      <div class="macro-item-head">
+        <div>
+          <strong class="macro-name"></strong>
+          <span class="muted small macro-meta"></span>
+        </div>
+        <div class="macro-actions">
+          <button class="icon-btn play-btn" title="Jouer">▶</button>
+          <button class="icon-btn edit-btn" title="Modifier les délais">✏️</button>
+          <button class="icon-btn export-btn" title="Exporter">⬇️</button>
+          <button class="icon-btn delete-btn" title="Supprimer">🗑️</button>
+        </div>
+      </div>
+      <div class="macro-controls">
+        <label class="tiny-label">Vitesse
+          <select class="speed-select">
+            <option value="0.25">0,25× (lent)</option>
+            <option value="0.5">0,5×</option>
+            <option value="1" selected>1× (réel)</option>
+            <option value="2">2×</option>
+            <option value="5">5×</option>
+            <option value="0.001">Instantané</option>
+          </select>
+        </label>
+        <label class="tiny-label">Répéter
+          <div class="loop-row">
+            <input class="loop-input" type="number" min="1" max="999" value="1" />
+            <label class="infinite-toggle" title="Boucle infinie — s'arrête seulement quand tu cliques ■">
+              <input type="checkbox" class="infinite-checkbox" /> ∞
+            </label>
+          </div>
+        </label>
+      </div>
+      <div class="macro-strip tape-strip"></div>
+      <p class="playback-status muted small hidden"></p>
+    </li>
+  </template>
+
+  <script src="popup.js"></script>
+</body>
+</html>

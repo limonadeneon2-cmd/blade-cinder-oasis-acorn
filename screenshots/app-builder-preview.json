@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Répète-Actions",
+      "hasCanvas": false,
+      "bodyTextLen": 1036,
+      "bodyTextHash": "716373ffa292bd6793daf4b7411aa6229f497e4b831041e3a284ca0a8a44d670",
+      "bodyTextPrefix": "Répète-Actions Enregistre. Joue les pubs. Réponds aux sondages. ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Répète-Actions",
+      "hasCanvas": false,
+      "bodyTextLen": 1036,
+      "bodyTextHash": "716373ffa292bd6793daf4b7411aa6229f497e4b831041e3a284ca0a8a44d670",
+      "bodyTextPrefix": "Répète-Actions Enregistre. Joue les pubs. Réponds aux sondages. ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
